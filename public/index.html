@@ -4,13 +4,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f4f1e9">
-  <meta name="description" content="Shiban Hafiz — full-stack developer. Thoughtful interfaces, dependable systems, and useful work for the web.">
-  <title>Shiban Hafiz — Full-stack developer</title>
+  <meta name="description" content="Portfolio of Shiban Hafiz, a second-year Artificial Intelligence and Machine Learning engineering student building practical software, full-stack applications and applied AI projects.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Shiban Hafiz | AIML Student &amp; Developer">
+  <meta property="og:description" content="A second-year Artificial Intelligence and Machine Learning engineering student building practical software, full-stack applications and applied AI projects.">
+  <title>Shiban Hafiz | AIML Student &amp; Developer</title>
   <link rel="icon" type="image/svg+xml" href="/assets/brandmark.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,450;6..72,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&amp;family=DM+Sans:wght@400;500;600;700&amp;family=Newsreader:opsz,wght@6..72,400;6..72,450;6..72,500&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css">
+  <script src="/portfolio-data.js" defer></script>
   <script src="/app.js" defer></script>
 </head>
 <body>
@@ -24,177 +28,159 @@
       <span></span><span></span>
     </button>
     <nav class="primary-nav" id="primary-nav" aria-label="Main navigation">
-      <a href="#work">Work</a>
-      <a href="#skills">Practice</a>
+      <a href="#top">Home</a>
+      <a href="#about">About</a>
+      <a href="#work">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#journey">Journey</a>
       <a href="#open-source">Open source</a>
-      <a href="#writing">Writing</a>
-      <a class="nav-contact" href="#contact">Say hello <span aria-hidden="true">↗</span></a>
+      <a class="nav-contact" href="#contact">Contact <span aria-hidden="true">↗</span></a>
     </nav>
   </header>
 
   <main id="main">
     <section class="hero page-shell" id="top" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <p class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span> FULL-STACK DEVELOPER <span class="eyebrow-divider">/</span> WEB</p>
-        <h1 id="hero-title">Small details.<br><em>Solid foundations.</em></h1>
-        <p class="hero-intro">I’m Shiban Hafiz. I work across the stack, shaping the moments people see and the systems they don’t.</p>
+        <p class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span> SECOND-YEAR B.E. AIML STUDENT</p>
+        <p class="hero-name" id="hero-name">SHIBAN HAFIZ</p>
+        <h1 id="hero-title">Artificial Intelligence &amp; Machine Learning <em>Student</em></h1>
+        <p class="hero-intro">I build practical software, full-stack applications and applied AI projects while learning the engineering fundamentals behind them.</p>
         <div class="hero-actions">
-          <a class="button button-dark" href="#work">Explore selected work <span aria-hidden="true">↓</span></a>
-          <a class="text-link" href="https://github.com/search?q=Shiban+Hafiz&amp;type=users" target="_blank" rel="noopener noreferrer">Find me on GitHub <span aria-hidden="true">↗</span></a>
+          <a class="button button-dark" href="#work">View projects <span aria-hidden="true">↓</span></a>
+          <a class="text-link" data-social="github" href="https://github.com/Shibanhafiz" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+          <a class="text-link" data-social="linkedin" href="https://www.linkedin.com/in/shiban-hafiz-57a4623a9/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
         </div>
         <div class="stack-block">
-          <p class="micro-label">A FEW TOOLS I REACH FOR</p>
-          <ul class="tech-list" aria-label="Technology stack">
-            <li class="tech-item"><span class="tech-icon icon-react" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="12" r="2.1"/><ellipse cx="12" cy="12" rx="9" ry="3.7"/><ellipse cx="12" cy="12" rx="9" ry="3.7" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="9" ry="3.7" transform="rotate(120 12 12)"/></svg></span><span>React</span></li>
-            <li class="tech-item"><span class="tech-icon icon-ts" aria-hidden="true">TS</span><span>TypeScript</span></li>
-            <li class="tech-item"><span class="tech-icon icon-node" aria-hidden="true">JS</span><span>Node.js</span></li>
-            <li class="tech-item"><span class="tech-icon icon-db" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M5 6.5c0-1.4 3.1-2.5 7-2.5s7 1.1 7 2.5S15.9 9 12 9 5 7.9 5 6.5Z"/><path d="M5 6.5v5c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5v-5M5 11.5v5C5 17.9 8.1 19 12 19s7-1.1 7-2.5v-5"/></svg></span><span>SQL</span></li>
-          </ul>
+          <p class="micro-label">TOOLS I’M BUILDING WITH</p>
+          <ul class="tech-list" id="hero-stack" aria-label="Technology stack"></ul>
         </div>
       </div>
-      <div class="hero-art" aria-label="A visual note on thoughtful software: clarity at every layer">
-        <div class="hero-art-top"><span class="micro-label">A WORKING PRINCIPLE</span><span class="hero-art-index">NOTE_001</span></div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="hero-art-top"><span class="micro-label">A WORK IN PROGRESS</span><span class="hero-art-index">B.E. / AIML</span></div>
         <div class="hero-art-rule"></div>
-        <p class="hero-art-quote">Make the<br>useful thing<br><em>feel simple.</em></p>
+        <p class="hero-art-quote">Learn.<br>Build.<br><em>Improve.</em></p>
         <div class="hero-diagram" aria-hidden="true">
-          <span class="diagram-node node-interface">interface</span>
+          <span class="diagram-node node-interface">learn</span>
           <span class="diagram-line"></span>
-          <span class="diagram-node node-logic">logic</span>
+          <span class="diagram-node node-logic">build</span>
           <span class="diagram-line"></span>
-          <span class="diagram-node node-data">data</span>
+          <span class="diagram-node node-data">ship</span>
         </div>
-        <div class="hero-art-foot"><span>THOUGHTFUL BY DESIGN</span><span>SH / 01</span></div>
+        <div class="hero-art-foot"><span>CURIOUS BY PRACTICE</span><span>AITM / BHATKAL</span></div>
         <span class="hero-art-stamp" aria-hidden="true">sh<span>/</span></span>
       </div>
       <div class="hero-foot page-wide-rule">
-        <span>BASED ON THE WEB</span><span>BUILT ACROSS THE STACK</span><a href="#work">SCROLL TO EXPLORE <span aria-hidden="true">↓</span></a>
+        <span>B.E. ARTIFICIAL INTELLIGENCE &amp; MACHINE LEARNING</span>
+        <span>SECOND YEAR · 2026</span>
+        <a href="#work">EXPLORE PROJECTS <span aria-hidden="true">↓</span></a>
+      </div>
+    </section>
+
+    <section class="section page-shell" id="about" aria-labelledby="about-title">
+      <div class="section-rail"><span>01</span><span>ABOUT</span></div>
+      <div class="section-main">
+        <div class="section-heading">
+          <div><p class="eyebrow">LEARN BY BUILDING</p><h2 id="about-title">I learn by<br><em>building.</em></h2></div>
+          <p class="section-intro" id="about-positioning">Building practical software, applied AI and full-stack projects.</p>
+        </div>
+        <div class="about-grid">
+          <div class="about-copy" id="about-copy"></div>
+          <aside class="about-facts" id="about-facts" aria-label="Education and location"></aside>
+        </div>
       </div>
     </section>
 
     <section class="section page-shell" id="work" aria-labelledby="work-title">
-      <div class="section-rail"><span>01</span><span>SELECTED WORK</span></div>
+      <div class="section-rail"><span>02</span><span>SELECTED WORK</span></div>
       <div class="section-main">
         <div class="section-heading">
-          <div><p class="eyebrow">A FEW THINGS IN MOTION</p><h2 id="work-title">Made to be <em>used.</em></h2></div>
-          <p class="section-intro">A set of small, self-contained interface concepts. Open a live demo, try the interaction, and follow a source search for each one.</p>
+          <div><p class="eyebrow">THREE PRACTICAL PROJECTS</p><h2 id="work-title">Built to <em>learn.</em></h2></div>
+          <p class="section-intro">A look at the problems, tools and ideas I’m exploring through software.</p>
         </div>
-        <div class="project-grid">
-          <article class="project-card project-card-wide">
-            <div class="project-art art-morrow" aria-hidden="true">
-              <div class="morrow-window">
-                <div class="window-top"><span class="window-dots"><i></i><i></i><i></i></span><span>morrow / week 24</span><span>···</span></div>
-                <div class="morrow-title">A little room<br>to think.</div>
-                <div class="morrow-task"><span class="task-dot task-done"></span><span>Plan the week</span><small>MON</small></div>
-                <div class="morrow-task"><span class="task-dot"></span><span>Review open notes</span><small>TUE</small></div>
-                <div class="morrow-task"><span class="task-dot"></span><span>Make space to build</span><small>FRI</small></div>
-              </div>
-              <span class="art-caption">01 / ROOM FOR WHAT MATTERS</span>
-            </div>
-            <div class="project-info">
-              <div><p class="project-kicker">INTERACTIVE CONCEPT <span>·</span> PRODUCTIVITY</p><h3>Morrow</h3><p class="project-description">A calmer weekly planner that gives the important work a little breathing room.</p></div>
-              <div class="project-links"><button class="project-link" type="button" data-demo="morrow">Explore demo <span aria-hidden="true">↗</span></button><a class="project-link" href="https://github.com/search?q=Shiban+Hafiz+Morrow&amp;type=repositories" target="_blank" rel="noopener noreferrer">Find source <span aria-hidden="true">↗</span></a></div>
-            </div>
-          </article>
-          <article class="project-card">
-            <div class="project-art art-common" aria-hidden="true">
-              <div class="note note-one"><span>FIELD NOTE / 09</span><b>Leave a little<br>context.</b><small>one useful thought, kept close</small></div>
-              <div class="note note-two"><span>SHARED SPACE</span><b>Good ideas<br>travel lightly.</b><small>add a note + invite a friend</small></div>
-              <span class="art-caption">02 / THINKING TOGETHER</span>
-            </div>
-            <div class="project-info">
-              <div><p class="project-kicker">INTERACTIVE CONCEPT <span>·</span> COLLABORATION</p><h3>Commonplace</h3><p class="project-description">A shared scratchpad with enough structure to keep useful thoughts in view.</p></div>
-              <div class="project-links"><button class="project-link" type="button" data-demo="commonplace">Explore demo <span aria-hidden="true">↗</span></button><a class="project-link" href="https://github.com/search?q=Shiban+Hafiz+Commonplace&amp;type=repositories" target="_blank" rel="noopener noreferrer">Find source <span aria-hidden="true">↗</span></a></div>
-            </div>
-          </article>
-          <article class="project-card project-card-offset">
-            <div class="project-art art-trace" aria-hidden="true">
-              <div class="trace-panel"><div class="trace-head"><span>REQUEST / 084</span><span class="trace-state"><i></i> IN MOTION</span></div><div class="trace-event"><i></i><span><b>Received</b><small>Request accepted</small></span><time>09:41</time></div><div class="trace-event"><i></i><span><b>Processing</b><small>Working through the queue</small></span><time>09:42</time></div><div class="trace-event trace-event-next"><i></i><span><b>Delivered</b><small>One clear next step</small></span><time>—</time></div></div>
-              <span class="art-caption">03 / A CLEARER SIGNAL</span>
-            </div>
-            <div class="project-info">
-              <div><p class="project-kicker">INTERACTIVE CONCEPT <span>·</span> DEVELOPER TOOLS</p><h3>Trace</h3><p class="project-description">A human-readable timeline for following a request from first ping to done.</p></div>
-              <div class="project-links"><button class="project-link" type="button" data-demo="trace">Explore demo <span aria-hidden="true">↗</span></button><a class="project-link" href="https://github.com/search?q=Shiban+Hafiz+Trace&amp;type=repositories" target="_blank" rel="noopener noreferrer">Find source <span aria-hidden="true">↗</span></a></div>
-            </div>
-          </article>
-        </div>
-        <p class="editable-note"><span aria-hidden="true">✳</span> These are front-end concept demos; replace the project titles and discovery links with verified work before publishing.</p>
-      </div>
-    </section>
-
-    <section class="section skills-section page-shell" id="skills" aria-labelledby="skills-title">
-      <div class="section-rail"><span>02</span><span>HOW I WORK</span></div>
-      <div class="section-main">
-        <div class="section-heading">
-          <div><p class="eyebrow">A PRACTICAL TOOLKIT</p><h2 id="skills-title">Comfortable across<br><em>the whole stack.</em></h2></div>
-          <p class="section-intro">From shaping an interface to making its data flow. These proficiency levels are editable starter labels, not independently verified credentials.</p>
-        </div>
-        <div class="skills-table" role="table" aria-label="Technical skills and proficiency levels">
-          <div class="skill-row skill-header" role="row"><span role="columnheader">AREA</span><span role="columnheader">TOOLS &amp; PRACTICE</span><span role="columnheader">LEVEL</span></div>
-          <div class="skill-row" role="row"><span class="skill-area" role="cell">01 / INTERFACE</span><span class="skill-tags" role="cell"><span>React</span><span>TypeScript</span><span>HTML &amp; CSS</span><span>Accessibility</span></span><span class="skill-rating" role="cell"><span class="rating-lines" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Confident</span></div>
-          <div class="skill-row" role="row"><span class="skill-area" role="cell">02 / SERVER</span><span class="skill-tags" role="cell"><span>Node.js</span><span>REST APIs</span><span>SQL</span></span><span class="skill-rating" role="cell"><span class="rating-lines rating-three" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Comfortable</span></div>
-          <div class="skill-row" role="row"><span class="skill-area" role="cell">03 / DELIVERY</span><span class="skill-tags" role="cell"><span>Git</span><span>Testing</span><span>CI / CD</span><span>Documentation</span></span><span class="skill-rating" role="cell"><span class="rating-lines rating-three" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Growing</span></div>
-        </div>
-        <p class="skills-note">The best tool is the one that makes the next change easier.</p>
+        <div class="project-grid" id="project-grid" aria-live="polite"></div>
       </div>
     </section>
 
     <section class="section open-section page-shell" id="open-source" aria-labelledby="open-title">
       <div class="section-rail"><span>03</span><span>IN THE OPEN</span></div>
       <div class="section-main open-layout">
-        <div class="open-copy"><p class="eyebrow">OPEN SOURCE &amp; SHARED WORK</p><h2 id="open-title">Useful work<br><em>travels.</em></h2><p>Public code is more than a green square. Look for the small details that make a project easier to adopt, extend, and pass along.</p><a class="button button-outline" href="https://github.com/search?q=Shiban+Hafiz&amp;type=users" target="_blank" rel="noopener noreferrer">Explore GitHub profiles <span aria-hidden="true">↗</span></a></div>
-        <div class="contribution-list" aria-label="Open-source contribution themes">
-          <div class="contribution-item"><span class="contribution-index">01</span><div><h3>Clear documentation</h3><p>Good examples lower the cost of the first contribution.</p></div><span class="contribution-mark" aria-hidden="true">↗</span></div>
-          <div class="contribution-item"><span class="contribution-index">02</span><div><h3>Small, reusable tools</h3><p>Focused utilities can save someone else an hour.</p></div><span class="contribution-mark" aria-hidden="true">↗</span></div>
-          <div class="contribution-item"><span class="contribution-index">03</span><div><h3>Thoughtful follow-through</h3><p>Issues, reviews, and fixes all move work forward.</p></div><span class="contribution-mark" aria-hidden="true">↗</span></div>
-          <a class="contribution-cta" href="https://github.com/search?q=Shiban+Hafiz&amp;type=repositories" target="_blank" rel="noopener noreferrer">Search repositories for Shiban Hafiz <span aria-hidden="true">↗</span></a>
+        <div class="open-copy">
+          <p class="eyebrow">COMMUNITY PROJECT</p>
+          <h2 id="open-title">CyberShield<br><em>in the open.</em></h2>
+          <p>A VTU 1BCP308 community/team project for scam awareness, privacy-first reporting, learning and explainable analysis. The repository credits the project team; I’m not assigning individual ownership here.</p>
+          <a class="button button-outline" data-project-repository="cybershield" href="https://github.com/Shibanhafiz/CyberShield-Community" target="_blank" rel="noopener noreferrer">View CyberShield repository <span aria-hidden="true">↗</span></a>
         </div>
-        <p class="editable-note open-note"><span aria-hidden="true">✳</span> Repository names and contribution history need the owner's verified GitHub profile before this section can highlight specific work.</p>
+        <div class="contribution-list">
+          <div class="contribution-item"><span class="contribution-index">01</span><div><h3>Understand the signals</h3><p>Message checks combine explainable ML and rule indicators; results are indicative, not proof.</p></div></div>
+          <div class="contribution-item"><span class="contribution-index">02</span><div><h3>Inspect URLs statically</h3><p>Structural checks never visit or fetch the submitted link.</p></div></div>
+          <div class="contribution-item"><span class="contribution-index">03</span><div><h3>Learn and report carefully</h3><p>Anonymous reports use redaction and deduplication; learning activities track quiz results, not immunity.</p></div></div>
+          <a class="contribution-cta" data-project-repository="cybershield" href="https://github.com/Shibanhafiz/CyberShield-Community" target="_blank" rel="noopener noreferrer">Explore source and project documentation <span aria-hidden="true">↗</span></a>
+        </div>
       </div>
     </section>
 
-    <section class="section writing-section page-shell" id="writing" aria-labelledby="writing-title">
-      <div class="section-rail"><span>04</span><span>FIELD NOTES</span></div>
+    <section class="section skills-section page-shell" id="skills" aria-labelledby="skills-title">
+      <div class="section-rail"><span>04</span><span>SKILLS</span></div>
       <div class="section-main">
         <div class="section-heading">
-          <div><p class="eyebrow">WRITING &amp; IDEAS</p><h2 id="writing-title">Thinking out <em>loud.</em></h2></div>
-          <p class="section-intro">Short notes on the decisions behind useful software: clarity, resilience, and what happens when things go wrong.</p>
+          <div><p class="eyebrow">CURRENT TOOLKIT</p><h2 id="skills-title">What I’m <em>learning to use.</em></h2></div>
+          <p class="section-intro">A working set of tools and fundamentals I’m continuing to develop—no percentages or mastery claims.</p>
         </div>
-        <div class="writing-list">
-          <article class="writing-row"><time datetime="2026-10-08">08 OCT 2026</time><div><p class="writing-category">RESILIENCE / NOTES</p><h3><button class="article-link" type="button" data-article="failure">Forms deserve a plan for failure</button></h3><p>Good error handling starts before anything breaks. A note on keeping the next step visible.</p></div><button class="round-arrow article-open" type="button" data-article="failure" aria-label="Read Forms deserve a plan for failure">↗</button></article>
-          <article class="writing-row"><time datetime="2026-09-18">18 SEP 2026</time><div><p class="writing-category">INTERFACE / PRACTICE</p><h3><button class="article-link" type="button" data-article="defaults">Calm interfaces start with good defaults</button></h3><p>Less setup, fewer decisions, and a useful first screen can be the same design choice.</p></div><button class="round-arrow article-open" type="button" data-article="defaults" aria-label="Read Calm interfaces start with good defaults">↗</button></article>
-          <article class="writing-row"><time datetime="2026-08-05">05 AUG 2026</time><div><p class="writing-category">ACCESSIBILITY / CRAFT</p><h3><button class="article-link" type="button" data-article="empty">Why I still write the empty state first</button></h3><p>The quiet screen is still a user interface—and often the first one people see.</p></div><button class="round-arrow article-open" type="button" data-article="empty" aria-label="Read Why I still write the empty state first">↗</button></article>
+        <dl class="skills-table" id="skill-groups"></dl>
+      </div>
+    </section>
+
+    <section class="section journey-section page-shell" id="journey" aria-labelledby="journey-title">
+      <div class="section-rail"><span>05</span><span>BUILDING &amp; LEARNING</span></div>
+      <div class="section-main">
+        <div class="section-heading">
+          <div><p class="eyebrow">THE NEXT STEP IS PART OF THE WORK</p><h2 id="journey-title">Progress, in <em>practice.</em></h2></div>
+          <p class="section-intro">An honest snapshot of what I’m building and improving in 2026.</p>
         </div>
-        <p class="editable-note"><span aria-hidden="true">✳</span> Article dates and copy are starter drafts—replace with published writing as it becomes available.</p>
+        <div class="journey-grid">
+          <ol class="timeline" id="journey-list"></ol>
+          <aside class="learning-panel">
+            <p class="eyebrow">CURRENTLY IMPROVING</p>
+            <h3>Foundations, then further.</h3>
+            <p>These are active learning areas, not claims of mastery.</p>
+            <ul class="learning-list" id="learning-list"></ul>
+          </aside>
+        </div>
+        <div class="interests-block">
+          <p class="micro-label">TECHNICAL INTERESTS</p>
+          <ul class="interest-list" id="interest-list"></ul>
+        </div>
       </div>
     </section>
 
     <section class="contact-section" id="contact" aria-labelledby="contact-title">
       <div class="contact-inner page-shell">
-        <div class="section-rail contact-rail"><span>05</span><span>GET IN TOUCH</span></div>
+        <div class="section-rail contact-rail"><span>06</span><span>GET IN TOUCH</span></div>
         <div class="contact-main">
-          <div class="contact-heading"><p class="eyebrow">A GOOD PLACE TO START</p><h2 id="contact-title">Have a thing<br>to <em>figure out?</em></h2><p>Tell me what you're building, what feels stuck, or what you'd like to make a little clearer.</p><a class="text-link contact-github" href="https://github.com/search?q=Shiban+Hafiz&amp;type=users" target="_blank" rel="noopener noreferrer">Or find me on GitHub <span aria-hidden="true">↗</span></a></div>
-          <form class="contact-form" id="contact-form">
-            <label for="contact-name">Your name</label><input id="contact-name" name="name" type="text" autocomplete="name" placeholder="What should I call you?" required>
-            <label for="contact-email">Your email</label><input id="contact-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
-            <label for="contact-message">A little about it</label><textarea id="contact-message" name="message" rows="3" placeholder="A few details are plenty." required></textarea>
-            <button class="button button-dark form-submit" type="submit">Prepare inquiry <span aria-hidden="true">↗</span></button>
-            <p class="form-status" id="form-status" role="status" aria-live="polite">Preview only: this form isn't connected to an inbox, so it will not send or store your message.</p>
-          </form>
+          <div class="contact-heading">
+            <p class="eyebrow">OPEN TO OPPORTUNITIES</p>
+            <h2 id="contact-title">Let's build<br>something <em>useful.</em></h2>
+            <p id="contact-description">I'm looking for opportunities to learn, contribute to real products and grow as a software engineer.</p>
+            <div class="contact-links" aria-label="Contact links">
+              <a class="button button-dark" data-social="github" href="https://github.com/Shibanhafiz" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+              <a class="button button-outline" data-social="linkedin" href="https://www.linkedin.com/in/shiban-hafiz-57a4623a9/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+              <a class="button button-outline" id="email-link" hidden>Email <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+          <div class="resume-card">
+            <div><p class="eyebrow">STUDENT PROFILE</p><h3>Résumé, in one page.</h3><p>Education, skills, selected projects and current areas of learning.</p></div>
+            <a class="button button-light" href="/shiban-hafiz-resume.pdf" download>Download résumé <span aria-hidden="true">↓</span></a>
+          </div>
         </div>
-        <div class="resume-card"><div><p class="eyebrow">KEEP THE DETAILS HANDY</p><h3>Resume, in one page.</h3><p>A brief profile and editable starter skills. Work history and links still need verification.</p></div><a class="button button-light" href="/shiban-hafiz-resume.pdf" download>Download résumé <span aria-hidden="true">↓</span></a></div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer page-shell"><a class="footer-wordmark" href="#top">SH<span>/</span></a><span>DESIGNED WITH CARE · BUILT FOR THE WEB</span><span>© <span id="current-year">2026</span> SHIBAN HAFIZ</span><a href="#top">BACK TO TOP ↑</a></footer>
-
-  <dialog class="content-dialog" id="demo-dialog" aria-labelledby="demo-title">
-    <div class="dialog-top"><span class="micro-label" id="demo-kicker">INTERACTIVE CONCEPT</span><button class="dialog-close" type="button" aria-label="Close demo">×</button></div>
-    <div class="dialog-body"><h2 id="demo-title"></h2><p id="demo-description"></p><div id="demo-content"></div><p class="dialog-note">Self-contained front-end concept — not a deployed product.</p></div>
-  </dialog>
-  <dialog class="content-dialog article-dialog" id="article-dialog" aria-labelledby="article-title">
-    <div class="dialog-top"><span class="micro-label" id="article-meta">FIELD NOTES</span><button class="dialog-close" type="button" aria-label="Close article">×</button></div>
-    <article class="dialog-body"><h2 id="article-title"></h2><p class="article-deck" id="article-deck"></p><div class="article-content" id="article-content"></div><p class="dialog-note">Draft article — revise and publish under the author's own byline.</p></article>
-  </dialog>
+  <footer class="site-footer page-shell">
+    <a class="footer-wordmark" href="#top" aria-label="Back to top">SH<span>/</span></a>
+    <span>LEARN · BUILD · DEBUG · IMPROVE · SHIP</span>
+    <span>© <span id="current-year">2026</span> <span id="footer-name">SHIBAN HAFIZ</span></span>
+    <a href="#top">BACK TO TOP ↑</a>
+  </footer>
 </body>
 </html>

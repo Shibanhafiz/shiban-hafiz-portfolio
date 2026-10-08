@@ -1,25 +1,19 @@
 # Shiban Hafiz
 
-**Full-stack developer** · [GitHub profile search](https://github.com/search?q=Shiban+Hafiz&type=users)
-
-> Portfolio résumé draft. Verify skills, projects, repository links, experience, education, and email before sharing; no career or contact details were supplied.
+**Second-year B.E. AIML student** · AITM, Bhatkal · Expected graduation 2029 · Bhatkal, Karnataka, India · [GitHub](https://github.com/Shibanhafiz) · [LinkedIn](https://www.linkedin.com/in/shiban-hafiz-57a4623a9/)
 
 ## Profile
 
-Full-stack web developer profile focused on thoughtful interfaces and dependable systems. Starter copy, not a verified biography.
+I build practical software, full-stack applications and applied AI while strengthening engineering fundamentals and learning through projects.
 
-## Technical toolkit — starter levels
+## Skills
 
-- **Interface:** React, TypeScript, HTML & CSS, accessibility — Confident
-- **Server:** Node.js, REST APIs, SQL — Comfortable
-- **Delivery:** Git, testing, CI / CD, documentation — Growing
+**Programming:** Python, C, JavaScript · **Frontend:** HTML, CSS, React, Vite · **Backend & APIs:** FastAPI, Express.js, REST API fundamentals · **AI / ML:** AI API integration, machine-learning and computer-vision fundamentals · **Database:** SQL fundamentals · **Tools:** Git, GitHub, VS Code, Docker fundamentals, AI-assisted development tools
 
-## Concept demos — replace with verified work
+## Projects
 
-- **Morrow:** weekly-planning interface.
-- **Commonplace:** shared scratchpad interface.
-- **Trace:** request-timeline interface.
+**Harvex — AI-Assisted Smart Farming:** Field information, irrigation decision support, crop and leaf analysis, weather, multilingual agronomy and voice assistance. *React · Vite · Express.js · FastAPI · Python · APIs · AI services*
 
-## Open-source practice
+**CyberShield — Community Cybersecurity:** VTU 1BCP308 team project covering explainable message analysis, static URL checks, privacy-oriented reports, learning and admin review. Scores are indicative; URL checks never visit links. [Repository](https://github.com/Shibanhafiz/CyberShield-Community)
 
-Illustrative focus areas: clear documentation, small reusable tools, and thoughtful follow-through. Confirm repositories and contribution history before claiming them as personal work.
+**AgentBreak — Security Testing Prototype:** URL submission, automated security-oriented checks and structured reports; findings are not guaranteed vulnerabilities. *React · TypeScript · APIs*

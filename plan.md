@@ -1,51 +1,31 @@
-# Shiban Hafiz — Developer Portfolio
+# Shiban Hafiz — Portfolio update plan
 
-## Implementation plan
+## Existing project inspected
 
-Build a responsive, static, single-page portfolio with semantic HTML, CSS, and vanilla JavaScript. Keep the portfolio on the configured runtime port (3000), without server or database features: no inbox destination, repository list, verified career history, or real project URLs were provided. Use clear, easy-to-edit content data; do not invent employers, education, achievements, impact metrics, or ownership of real repositories. Live project examples are labeled as self-contained concept demos. GitHub links use accurate search/discovery URLs until the owner's profile and repositories are confirmed. The contact form is a front-end interaction only; it must be identified as unconnected until an email destination or form service is provided. Provide an actual downloadable one-page résumé/profile starter that avoids fabricated employment details and is identified as a draft to verify.
+The current site is a dependency-free static single page using semantic HTML, CSS, and vanilla JavaScript. It serves `public/` on the configured Preview port 3000; the only page route is `/`. There is no React framework, build tool, API, database, image library, or email service in this portfolio project. Keep that architecture and the existing visual identity. Reuse the warm-paper/charcoal/persimmon palette, Newsreader/DM Sans/DM Mono type system, indexed editorial sections, fine rules, restrained motion, and responsive navigation. This request is a content and information-architecture update, not a redesign.
 
-### Design direction
+## Verified source facts and constraints
 
-- **Design movement:** Contemporary editorial publishing meets practical software engineering—not a nostalgic terminal skin.
-- **Core principles:** Content before decoration; clear hierarchy; restrained human color; honest, calm microcopy.
-- **Color philosophy:** Warm linen (`#F4F1E9`) as the page ground, deep charcoal (`#252622`) for legible type, muted stone/olive for secondary information, and a concentrated persimmon-red (`#C74F35`) for links, focus, and key actions. Avoid gradient fields, violet/cyan defaults, neon, faux-glass effects, and gratuitous shadow.
-- **Layout paradigm:** A left-aligned editorial canvas with a narrow section index/metadata rail, offset hero columns, a staggered project composition, and generous horizontal rules. Shift into a single column on small screens.
-- **Signature elements:** Fine rule-and-index section markers; a bespoke SH monogram with a single persimmon slash; compact code-inspired project/demo labels.
-- **Interaction philosophy:** Make links and actions explicit, keyboard reachable, and quietly responsive; preview concept projects and open writing in focused accessible dialogs; never simulate backend submission as successful email delivery.
-- **Animation:** Short (140–220 ms) opacity/underline/translate transitions only; respect `prefers-reduced-motion`; no perpetual motion or scroll hijacking.
-- **Typography system:** Newsreader for large editorial display and article titles; DM Sans for readable UI/body; DM Mono for metadata, tags, section indices, and technology labels. Supply local system fallbacks.
-- **Brand essence:** A thoughtful full-stack practice connecting interface details with dependable implementation. Personality: considered, capable, direct.
-- **Brand voice:** Precise and warm; explain rather than boast. Example lines: “Small details. Solid foundations.” and “From the first interaction to the last request.”
-- **Wordmark & logo:** An original, compact SH ligature/slash mark in an outlined square, used alongside a text wordmark rather than a default icon.
-- **Signature brand color:** Persimmon `#C74F35`, reserved for interactive emphasis and the monogram slash.
+The supplied master prompt is the source of truth for Shiban's name, second-year B.E. Artificial Intelligence & Machine Learning student positioning, AITM Bhatkal education, expected 2029 graduation, skills, interests, learning list, journey copy, project order, Harvex and AgentBreak descriptions, and social links. Use the exact GitHub profile `https://github.com/Shibanhafiz` and LinkedIn profile `https://www.linkedin.com/in/shiban-hafiz-57a4623a9/`. The contact email was not supplied; store only an empty editable email setting and hide its CTA until the owner fills it in.
 
-### Features and behavior
+The CyberShield project is at `https://github.com/Shibanhafiz/CyberShield-Community`. Its public README and the cloned repository's backend analysis, URL-analysis, report, community and learning routes were inspected. Describe it as a VTU 1BCP308 community/team project, not as individually authored work. Verified capabilities: an explainable message analyzer combining ML and rule signals; static structural URL checks; anonymous report redaction/deduplication; learning topics, scenarios, quizzes and awareness measurement; and an admin review/audit workflow. Emphasize that risk values are heuristic and indicative, not proof or fraud probabilities; URL inspection is static and never visits the target; reputation data is unavailable until a real provider exists. Do not quote stars, downloads, impact statistics, or unsupported personal contribution claims.
 
-- Hero with the name and full-stack positioning, inline/vector technology marks, and a GitHub profile-discovery link.
-- Responsive project cards, concise copy, embedded concept demos, and source discovery links. Replace with the owner's actual deployed and repository URLs when available.
-- Categorized skill matrix with visible proficiency labels/bars as editable starter content.
-- Open-source section focused on repository discovery and contribution themes; do not state activity or repository ownership that cannot be verified.
-- Writing cards with dates, summaries, and in-page article dialogs so each link opens actual included text.
-- Footer inquiry form with accessible validation and an honest message that delivery is not connected; provide a GitHub fallback.
-- Downloadable PDF résumé/profile starter with no fabricated work history.
-- Mobile navigation and all sections responsive; route manifest contains only `/`.
+The user supplied Harvex and AgentBreak descriptions, feature lists, and technologies but no repository or deployed-demo URLs. Present those descriptions without adding implementation status or claims. No GitHub/demo button may be fabricated; show the CyberShield repository link only, and suppress the live-demo action for all three projects. There are no supplied published articles, testimonials, professional roles, email address, or portrait photo. Remove the old generated article drafts, fake concept project cards, placeholder search links, fake proficiency ratings, unconnected contact form, and résumé draft disclaimers that referenced missing career information. Do not add a profile photo; the existing page has no photo slot.
 
-### Project structure
+## Implementation decisions and structure
 
-- `public/index.html` — single accessible page, navigation, hero, project/writing content, and form.
-- `public/styles.css` — tokens, typography, responsive editorial layout, icon/demo treatments, and reduced-motion states.
-- `public/app.js` — navigation controls, concept demo and article dialogs, contact-form validation/status, and small accessible interactions.
-- `public/assets/brandmark.svg` — original SH monogram mark / favicon.
-- `public/manus-routes.json` — declared page-route manifest for `/`, served directly from the isolated web root.
-- `public/shiban-hafiz-resume.pdf` — downloadable one-page résumé/profile starter; avoid invented career facts and identify it as a draft.
-- `app.config.ts` — project branding metadata with the uploaded durable HTTPS logo URL, added before checkpointing.
-- `TODO.md` — outcome clauses copied from the confirmed scope; mark done only when implemented.
+- `public/index.html` remains the single semantic page and contains the existing wordmark, skip link, site header, metadata rail, footer, and page structure. Update the title/description/Open Graph fields from the supplied facts, and keep one root route.
+- `public/styles.css` retains the site's existing tokens, typography, color system, section rails, grids, rules, and breakpoint design. Adjust only what the new copy/layout needs: About, grouped skill tags, the 2026 learning/journey, the three real projects (CyberShield most visually prominent while preserving the stated project order), social CTAs, and the résumé panel. Replace decorative fake product screenshots with restrained static diagrams that describe the provided project scopes rather than implying a live dashboard.
+- `public/portfolio-data.js` holds editable profile, links, education, skills, learning goals, interests, journey, and the exact three project records. No fake URL is stored: `harvex.repository`, `harvex.demo`, `agentbreak.repository`, and `agentbreak.demo` are absent; CyberShield has its supplied repository URL; email is an empty string. Render repeatable rows/tags from this data in `public/app.js` with DOM APIs and `textContent`, not interpolated HTML.
+- `public/app.js` only renders configured content, updates the responsive navigation, populates social links from the data, and conditionally hides the unconfigured email action. Remove the previous demo and article dialogs and the client-only contact form.
+- `public/shiban-hafiz-resume.pdf` and the editable root `resume-draft.md` use only the supplied student/education facts, supplied skills, stated project scope, and the verified CyberShield repository. Do not invent jobs, email, metrics, certifications, or individual project ownership.
+- `public/manus-routes.json` continues to declare only `/`; `public/assets/brandmark.svg` and root `app.config.ts` preserve the existing SH logo.
+- Root `plan.md` and `TODO.md` are implementation records outside the served static root.
 
-### Dependencies and serving
+## Content and layout
 
-No runtime framework, third-party library, API, server feature, database, or install step is required. Google Fonts may be requested for Newsreader, DM Sans, and DM Mono, with robust system fallbacks. Serve `public/` at `0.0.0.0:3000` with Python's static HTTP server; all browser-facing URLs within the site remain relative. The public folder contains only website files, the route manifest, and the download; internal plans, task notes, and project configuration stay outside the served directory. Both `/manus-routes.json` and `/shiban-hafiz-resume.pdf` resolve at the web root. No build/publication declaration is required unless publication is requested. Checkpointing and publication remain separate actions.
+Keep the current one-page page flow, updated to Home, About, Projects, Skills, Journey, and Contact. The hero clearly names Shiban Hafiz, says second-year AIML student, gives the exact supporting line and the user's GitHub/LinkedIn links. About uses the supplied honest student copy and location. The project cards appear in the exact order Harvex, CyberShield, AgentBreak; CyberShield spans the feature slot and includes its verified repo link and caveats. Group the supplied skills as Programming, Frontend, Backend & APIs, AI/ML, Database, and Tools; show tags, never percentages or mastery levels. A separate current-learning block names all supplied areas. The Journey records only the three 2026 student/building/Git workflow entries. Interests use the supplied concise topics. The open-source section features CyberShield and accurately notes its team-project context. Contact provides GitHub and LinkedIn links; it renders an email button only after a real address is entered in `portfolio-data.js`. Keep the résumé download. Omit the blog section because the owner supplied no genuine writing and explicitly prohibits invented content.
 
+## Serving and dependencies
 
-### Static-server path note
-
-The Preview process runs from the project root with `--directory public`; this keeps `plan.md`, `TODO.md`, `app.config.ts`, and résumé source notes out of the served directory while keeping the browser routes unchanged. `public/` is the site root.
+Continue serving `public/` with the configured Python static server on `0.0.0.0:3000`. Do not enable server, database, email capture, or third-party form services. Keep all site route/asset references root-relative. No new runtime dependency is needed. The existing Google Fonts references and system fallbacks remain. Continue to keep the website as Preview only unless the owner explicitly asks to publish it.
