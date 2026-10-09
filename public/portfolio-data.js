@@ -36,14 +36,15 @@ window.PORTFOLIO = {
       subtitle: 'AI-Assisted Smart Farming Platform',
       category: 'AGRICULTURE · APPLIED AI',
       description: 'An AI-assisted smart farming platform designed to bring field monitoring, irrigation support, crop recommendations, plant-leaf analysis, weather context and multilingual agronomy assistance into one application.',
-      positioning: 'A practical agriculture-focused software project combining web development and applied AI concepts.',
+      positioning: "Shiban's public repository is a fork of Team Goldsmiths' SIH 2026 project.",
       technologies: ['React', 'Vite', 'Express.js', 'FastAPI', 'Python', 'APIs', 'AI services'],
       features: [
         'Farm and field information monitoring',
         'Irrigation decision support and crop recommendations',
         'Leaf analysis, weather context and multilingual voice assistance'
       ],
-      note: 'Decision support for agriculture; no claim of autonomous real-world farm control.'
+      repository: 'https://github.com/Shibanhafiz/Harvex',
+      repositoryLabel: 'GitHub fork'
     },
     {
       id: 'cybershield',

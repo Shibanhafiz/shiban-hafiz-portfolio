@@ -118,7 +118,7 @@
     const actions = make('div', 'project-links');
     if (project.repository) {
       const repository = make('a', 'project-link');
-      repository.append(document.createTextNode('GitHub repository '));
+      repository.append(document.createTextNode(`${project.repositoryLabel || 'GitHub repository'} `));
       const arrow = make('span', '', '↗');
       arrow.setAttribute('aria-hidden', 'true');
       repository.append(arrow);
@@ -129,13 +129,12 @@
       const demoUrl = safeHttps(project.demo);
       if (demoUrl) {
         const demo = make('a', 'project-link');
-        demo.append(document.createTextNode('Live project '));
+        demo.append(document.createTextNode(`${project.demoLabel || 'Project preview'} `));
         const arrow = make('span', '', '↗');
         arrow.setAttribute('aria-hidden', 'true');
         demo.append(arrow);
-        demo.setAttribute('aria-label', `Open the live ${project.name} project`);
-        setExternalLink(demo, demoUrl);
-        actions.append(demo);
+        demo.setAttribute('aria-label', `Open the ${project.name} live demo`);
+        if (setExternalLink(demo, demoUrl)) actions.append(demo);
       }
     }
     info.append(copy);
