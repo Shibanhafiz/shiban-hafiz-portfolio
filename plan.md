@@ -28,3 +28,8 @@ Preserve the existing page order: Home, About, Projects, Skills, Journey and Con
 ## Serving and dependencies
 
 Continue serving `public/` on the existing static Python server at `0.0.0.0:3000`. No server, database, email capture, form provider, or Harvex external API is needed. Keep internal site navigation relative and do not publish unless explicitly requested.
+
+
+## Current deployment request
+
+The user asked for deployment to a custom domain or hosting platform but supplied no custom domain. Use the project's existing Manus-managed static hosting. Its output is the committed `public/` directory, published with the no-build contract `command: true`, `outputDirectory: public`; `public/index.html` is present. Preserve `publishing.auto_publish: false` and make only the explicit one-time publication authorized in this request. Do not change DNS or add an external hosting account.
