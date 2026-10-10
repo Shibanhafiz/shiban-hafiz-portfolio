@@ -31,7 +31,6 @@ window.PORTFOLIO = {
   projects: [
     {
       id: 'harvex',
-      number: '01',
       name: 'Harvex',
       subtitle: 'AI-Assisted Smart Farming Platform',
       category: 'AGRICULTURE · APPLIED AI',
@@ -48,7 +47,6 @@ window.PORTFOLIO = {
     },
     {
       id: 'cybershield',
-      number: '02',
       name: 'CyberShield',
       subtitle: 'Community Cybersecurity Platform',
       category: 'TEAM PROJECT · VTU 1BCP308',
@@ -66,7 +64,6 @@ window.PORTFOLIO = {
     },
     {
       id: 'agentbreak',
-      number: '03',
       name: 'AgentBreak',
       subtitle: 'Web Security Testing Prototype',
       category: 'WEB SECURITY · PROTOTYPE',

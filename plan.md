@@ -2,7 +2,7 @@
 
 ## Existing project inspected
 
-The site is a dependency-free static single page built with semantic HTML, CSS, and vanilla JavaScript. It serves `public/` on the configured Preview port 3000 and has one page route, `/`. There is no React framework, build tool, API, database, image library, or email service in this portfolio. Keep the existing editorial identity: warm paper, charcoal and persimmon; Newsreader, DM Sans and DM Mono; indexed section labels, thin rules, restrained motion, accessible navigation, and responsive layouts. This request removes the Harvex sample page; it does not redesign the portfolio.
+The site is a dependency-free static single page built with semantic HTML, CSS, and vanilla JavaScript. It serves `public/` on the configured Preview port 3000 and has one page route, `/`. There is no React framework, build tool, API, database, image library, or email service in this portfolio. Keep the existing editorial identity: warm paper, charcoal and persimmon; Newsreader, DM Sans and DM Mono; editorial section rails, thin rules, restrained motion, accessible navigation, and responsive layouts. The earlier Harvex sample-preview request removed that isolated page; this polish pass refines the existing portfolio's hierarchy, typography, contrast, spacing, and responsive behavior without changing the brand or factual content.
 
 ## Verified source facts and boundaries
 
@@ -29,7 +29,10 @@ Preserve the existing page order: Home, About, Projects, Skills, Journey and Con
 
 Continue serving `public/` on the existing static Python server at `0.0.0.0:3000`. No server, database, email capture, form provider, or Harvex external API is needed. Keep internal site navigation relative and do not publish unless explicitly requested.
 
-
 ## Current deployment request
 
 The user asked for deployment to a custom domain or hosting platform but supplied no custom domain. Use the project's existing Manus-managed static hosting. Its output is the committed `public/` directory, published with the no-build contract `command: true`, `outputDirectory: public`; `public/index.html` is present. Preserve `publishing.auto_publish: false` and make only the explicit one-time publication authorized in this request. Do not change DNS or add an external hosting account.
+
+## Final visual polish decisions
+
+Keep the warm-paper, charcoal and persimmon identity. The single hero H1 is Shiban's name, with the AIML student headline as supporting text rather than an eyebrow. Remove redundant ordinals from project and contribution presentations; retain the editorial section rails and illustration labels. Raise supporting text and caption sizes, use the dark accent and muted tokens for small text, keep primary interactive targets at least 44px high, and preserve the single-column mobile composition, semantic headings, keyboard focus, working navigation, reduced-motion handling, and all factual content and project caveats.

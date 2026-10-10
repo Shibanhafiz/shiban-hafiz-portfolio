@@ -29,10 +29,9 @@
     return true;
   };
 
-  document.querySelector('#hero-name').textContent = data.profile.name.toUpperCase();
-  const [headlineText, headlineEmphasis] = data.profile.headline.match(/^(.*) (Student)$/).slice(1);
   const heroTitle = document.querySelector('#hero-title');
-  heroTitle.replaceChildren(document.createTextNode(`${headlineText} `), make('em', '', headlineEmphasis));
+  heroTitle.textContent = data.profile.name;
+  document.querySelector('#hero-role').textContent = data.profile.headline;
   document.querySelector('#about-positioning').textContent = data.profile.positioning;
   const [contactLead, contactEmphasis] = data.contact.headline.match(/^(.* )([^ ]+\.)$/).slice(1);
   document.querySelector('#contact-title').replaceChildren(
@@ -72,7 +71,6 @@
     const card = make('article', `project-card${project.id === 'cybershield' ? ' project-card-featured' : ''}`);
     const art = make('div', `project-art project-visual-${project.id}`);
     art.setAttribute('aria-hidden', 'true');
-    art.append(make('span', 'project-visual-label', `${project.number} / PROJECT NOTES`));
     const artTitle = make('p', 'project-visual-title');
     const visualLine = project.id === 'harvex'
       ? ['FIELD', 'WATER', 'INSIGHT']
@@ -96,12 +94,11 @@
 
     const info = make('div', 'project-info');
     const copy = make('div', 'project-info-copy');
-    const kicker = make('p', 'project-kicker', project.number.padStart(2, '0'));
     const title = make('h3', '', project.name);
     const subtitle = make('p', 'project-subtitle', project.subtitle);
     const description = make('p', 'project-description', project.description);
     const positioning = make('p', 'project-positioning', project.positioning);
-    copy.append(kicker, title, subtitle, description, positioning);
+    copy.append(title, subtitle, description, positioning);
 
     const technologyList = make('ul', 'project-tags');
     technologyList.setAttribute('aria-label', `${project.name} technologies`);
@@ -184,18 +181,34 @@
 
   const menuButton = document.querySelector('.menu-toggle');
   const navigation = document.querySelector('#primary-nav');
+  const closeNavigation = (restoreFocus = false) => {
+    menuButton.setAttribute('aria-expanded', 'false');
+    menuButton.setAttribute('aria-label', 'Open navigation');
+    navigation.classList.remove('is-open');
+    if (restoreFocus) menuButton.focus();
+  };
   menuButton.addEventListener('click', () => {
     const opening = menuButton.getAttribute('aria-expanded') !== 'true';
-    menuButton.setAttribute('aria-expanded', String(opening));
-    menuButton.setAttribute('aria-label', opening ? 'Close navigation' : 'Open navigation');
-    navigation.classList.toggle('is-open', opening);
+    if (opening) {
+      menuButton.setAttribute('aria-expanded', 'true');
+      menuButton.setAttribute('aria-label', 'Close navigation');
+      navigation.classList.add('is-open');
+    } else {
+      closeNavigation();
+    }
   });
   navigation.addEventListener('click', (event) => {
-    if (event.target.closest('a')) {
-      menuButton.setAttribute('aria-expanded', 'false');
-      menuButton.setAttribute('aria-label', 'Open navigation');
-      navigation.classList.remove('is-open');
-    }
+    if (event.target.closest('a')) closeNavigation();
+  });
+  document.addEventListener('click', (event) => {
+    const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+    if (isOpen && !navigation.contains(event.target) && !menuButton.contains(event.target)) closeNavigation();
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && menuButton.getAttribute('aria-expanded') === 'true') closeNavigation(true);
+  });
+  window.matchMedia('(min-width: 901px)').addEventListener('change', (event) => {
+    if (event.matches) closeNavigation();
   });
 
   document.querySelector('#current-year').textContent = String(new Date().getFullYear());
