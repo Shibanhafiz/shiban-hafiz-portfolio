@@ -207,9 +207,15 @@
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape' && menuButton.getAttribute('aria-expanded') === 'true') closeNavigation(true);
   });
-  window.matchMedia('(min-width: 901px)').addEventListener('change', (event) => {
+  const desktopViewport = window.matchMedia('(min-width: 901px)');
+  const closeNavigationOnDesktop = (event) => {
     if (event.matches) closeNavigation();
-  });
+  };
+  if (typeof desktopViewport.addEventListener === 'function') {
+    desktopViewport.addEventListener('change', closeNavigationOnDesktop);
+  } else if (typeof desktopViewport.addListener === 'function') {
+    desktopViewport.addListener(closeNavigationOnDesktop);
+  }
 
   document.querySelector('#current-year').textContent = String(new Date().getFullYear());
 })();

@@ -38,3 +38,15 @@ The user asked for deployment to a custom domain or hosting platform but supplie
 ## Final visual polish decisions
 
 Keep the warm-paper, charcoal and persimmon identity. The single hero H1 is Shiban's name, with the AIML student headline as supporting text rather than an eyebrow. Remove redundant ordinals from project and contribution presentations; retain the editorial section rails and illustration labels. Raise supporting text and caption sizes, use the dark accent and muted tokens for small text, keep primary interactive targets at least 44px high, and preserve the single-column mobile composition, semantic headings, keyboard focus, working navigation, reduced-motion handling, and all factual content and project caveats.
+
+## Motion intent and implementation
+
+**Focal moment:** a restrained staggered entrance for the existing hero text; the transition adds an authored first impression without delaying access to the portfolio.
+
+**Scroll behavior:** reveal About, Skills and Projects section content once as it approaches the viewport. Reveal each existing project card as it enters, with a short stagger when cards enter together. Use only subtle, desktop-only parallax on the existing hero illustration; do not pin sections, loop animations, or animate layout-driving properties.
+
+**Accessibility and responsive behavior:** keep content visible in the default HTML/CSS state so a missing library or script cannot hide information. Do not initialize nonessential motion under `prefers-reduced-motion: reduce`. Disable parallax below the desktop breakpoint. Limit motion to short opacity/transform transitions and a small, bounded card stagger.
+
+**Dependencies and lifecycle:** load only pinned GSAP core and ScrollTrigger scripts, deferred before `app.js`; the static page has no package manager or build step, so do not introduce one. Guard for unavailable globals. Initialize after `app.js` has rendered the project cards, register ScrollTrigger once, refresh after document fonts settle, and use GSAP media-query contexts to revert tweens/triggers when preferences or breakpoints change. Revert the remaining motion context on `pagehide`.
+
+**Lifecycle refinement:** use explicit `gsap.context()` scopes with backward-compatible MediaQueryList subscriptions (`addEventListener` or legacy `addListener`) to revert/rebuild motion when preferences or desktop width change. Suspend motion on persisted `pagehide` and restore it on persisted `pageshow` (BFCache); fully remove media-query listeners and contexts on a nonpersisted `pagehide`.
