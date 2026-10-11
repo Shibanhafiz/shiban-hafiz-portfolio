@@ -104,10 +104,8 @@ h1 em, h2 em { color: var(--accent); font-weight: 400; }
 .about-facts .micro-label { margin: 0; font-size: 11px; }
 .about-facts strong { font-size: 13px; font-weight: 500; line-height: 1.55; }
 
-.project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px 32px; align-items: start; }
-.project-card { min-width: 0; }
-.project-card-featured { grid-column: 1 / -1; }
-.project-card:last-child { grid-column: 2; }
+.project-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 40px; align-items: start; }
+.project-card { display: grid; min-width: 0; grid-template-columns: minmax(0, 1fr); }
 .project-art { position: relative; display: flex; min-height: 238px; flex-direction: column; justify-content: space-between; overflow: hidden; padding: 21px 22px 14px; background: var(--card); }
 .project-card-featured .project-art { min-height: 288px; padding: 27px 30px 17px; background: #ece8de; }
 .project-visual-title { position: relative; z-index: 1; margin: auto 0; font-family: var(--display); font-size: clamp(29px, 4vw, 46px); line-height: 1.02; letter-spacing: -.035em; }
@@ -137,6 +135,15 @@ h1 em, h2 em { color: var(--accent); font-weight: 400; }
 .project-link { display: inline-flex; min-height: 44px; align-items: center; gap: 6px; padding: 7px 4px; color: var(--accent-dark); font-size: 12px; font-weight: 600; white-space: nowrap; }
 .project-link:hover { color: var(--ink); }
 .project-link span { color: var(--accent-dark); }
+
+@media (min-width: 1101px) {
+  .project-card { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); column-gap: clamp(28px, 4vw, 56px); }
+  .project-card > .project-art { grid-column: 1; grid-row: 1; }
+  .project-card > .project-info { display: block; grid-column: 2; grid-row: 1; align-self: center; padding: 0 1px; }
+  .project-card > .project-info .project-links { flex-direction: row; flex-wrap: wrap; align-items: flex-start; padding-top: 12px; }
+  .project-card:nth-child(even) > .project-art { grid-column: 2; grid-row: 1; }
+  .project-card:nth-child(even) > .project-info { grid-column: 1; grid-row: 1; }
+}
 
 .open-section { padding-top: clamp(80px, 9vw, 122px); }
 .open-layout { display: grid; grid-template-columns: minmax(230px, .9fr) minmax(0, 1.4fr); gap: 28px 9%; align-items: start; }
@@ -260,8 +267,6 @@ h1 em, h2 em { color: var(--accent); font-weight: 400; }
   .about-grid { grid-template-columns: 1fr; gap: 27px; }
   .about-facts { grid-template-columns: 1fr 1fr; gap: 16px; padding: 15px 0 0; border-top: 1px solid var(--rule); border-left: 0; }
   .project-grid { grid-template-columns: 1fr; gap: 34px; }
-  .project-card-featured { grid-column: auto; }
-  .project-card:last-child { grid-column: auto; }
   .project-art, .project-card-featured .project-art { min-height: 225px; padding: 19px; }
   .project-card-featured .project-info { display: flex; }
   .project-info { display: flex; flex-direction: column; gap: 4px; }

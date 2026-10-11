@@ -25,6 +25,8 @@ Harvex is linked only to the user's verified fork at `https://github.com/Shibanh
 
 Preserve the existing page order: Home, About, Projects, Skills, Journey and Contact. Keep exactly three main projects in the supplied order—Harvex, CyberShield, AgentBreak—with CyberShield as the visually prominent project. Harvex links directly to the verified GitHub fork and has no interactive or deployment-preview content. Keep project descriptions factual and preserve the security/AgentBreak caveats. No writing section is added because no real articles were supplied. Retain the minimal, light editorial design and distinctive warm color palette.
 
+At laptop/desktop widths, use full-width alternating editorial rows: each project's artwork shares a row with its existing details—title, subtitle, description, technologies, features, notes, and links—to fill the horizontal space without filler. Keep CyberShield prominent with its larger art treatment. At narrower widths, stack each artwork above its details and keep all three project cards full width.
+
 ## Serving and dependencies
 
 Continue serving `public/` on the existing static Python server at `0.0.0.0:3000`. No server, database, email capture, form provider, or Harvex external API is needed. Keep internal site navigation relative and do not publish unless explicitly requested.
