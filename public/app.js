@@ -183,6 +183,45 @@
     emailLink.hidden = false;
   }
 
+  const contactForm = document.querySelector('#contact-form');
+  const contactFormStatus = document.querySelector('#contact-form-status');
+  if (contactForm && data.links.email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.links.email)) {
+    const nameInput = contactForm.elements.namedItem('name');
+    const messageInput = contactForm.elements.namedItem('message');
+    const stripControls = (value) => String(value ?? '').replace(/[\u0000-\u001f\u007f]/g, ' ').trim();
+    const validateNonblank = (input, label) => {
+      const updateValidity = () => input.setCustomValidity(
+        stripControls(input.value) ? '' : `Please enter your ${label}.`
+      );
+      input.addEventListener('input', updateValidity);
+      updateValidity();
+      return updateValidity;
+    };
+    const validateName = validateNonblank(nameInput, 'name');
+    const validateMessage = validateNonblank(messageInput, 'message');
+
+    contactForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const fields = new FormData(contactForm);
+      const name = stripControls(fields.get('name'));
+      const replyEmail = stripControls(fields.get('email'));
+      const suppliedSubject = stripControls(fields.get('subject'));
+      const subject = suppliedSubject || `Portfolio message from ${name}`;
+      const message = String(fields.get('message') ?? '').trim();
+      validateName();
+      validateMessage();
+      if (!contactForm.reportValidity()) return;
+
+      const body = `Name: ${name}\r\nEmail: ${replyEmail}\r\n\r\n${message}`;
+      const mailto = `mailto:${data.links.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+      if (contactFormStatus) {
+        contactFormStatus.textContent = 'Your email app should open with this draft. Review it and press Send there.';
+      }
+      window.location.href = mailto;
+    });
+  }
+
   const menuButton = document.querySelector('.menu-toggle');
   const navigation = document.querySelector('#primary-nav');
   const closeNavigation = (restoreFocus = false) => {

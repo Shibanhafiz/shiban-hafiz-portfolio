@@ -14,10 +14,10 @@ Harvex is linked only to the user's verified fork at `https://github.com/Shibanh
 
 ## Implementation decisions and project structure
 
-- `public/index.html` remains the single semantic home page. Preserve its header, wordmark, skip link, navigation, section rails, project-card container, contact links, footer and existing metadata.
+- `public/index.html` remains the single semantic home page. Preserve its header, wordmark, skip link, navigation, section rails, project-card container, contact copy, contact links, accessible message form, footer and existing metadata.
 - `public/styles.css` retains the established palette, typography, section layout, project cards, responsive breakpoints and reduced-motion behavior; remove only preview-specific rules if any become unused, and remove decorative line art from all three project-illustration backgrounds while preserving their titles, labels, colors and responsive layout.
 - `public/portfolio-data.js` remains the editable source of truth for Shiban's profile, links, education, skills, learning topics, interests, journey and three project records. Harvex keeps its direct GitHub fork link and no demo URL. CyberShield keeps its supplied repository link. AgentBreak has no link until a real URL is supplied. Its email field contains the verified `Shibanhafiz07@gmail.com` from the supplied résumé.
-- `public/app.js` renders the central portfolio content, safely creates HTTPS repository/social/demo links when real URLs exist, handles responsive navigation, and displays the verified email as a visible, accessible `mailto:` action. It hides the email action only when the editable field is empty. It no longer renders any Harvex sample-page link or same-origin demo route.
+- `public/app.js` renders the central portfolio content, safely creates HTTPS repository/social/demo links when real URLs exist, handles responsive navigation and the client-side contact form, and displays the verified email as a visible, accessible `mailto:` action. Form submission validates and encodes visitor details into a `mailto:` draft; the visitor sends it from their own email app. No message is stored or sent by the site. It hides the email action only when the editable field is empty. It no longer renders any Harvex sample-page link or same-origin demo route.
 - `public/Shiban_Hafiz_Resume.docx` is an unchanged copy of `/home/ubuntu/upload/Shiban_Hafiz_Resume.docx`; its SHA-256 matches the source (`52c29de473986d43abebce3f5b53eaaaa53a7d28ab23b8a79f9146dfb79c5833`). The supplied document renders as two pages. The résumé card links directly to the DOCX; the previous generated PDF and Markdown draft are removed.
 - `public/manus-routes.json` declares only `/`, the page still present in the source. `public/assets/brandmark.svg` and root `app.config.ts` retain the existing SH logo. `plan.md` and `TODO.md` remain outside the served root.
 
@@ -29,11 +29,11 @@ At laptop/desktop widths, use full-width alternating editorial rows: each projec
 
 ## Serving and dependencies
 
-Continue serving `public/` on the existing static Python server at `0.0.0.0:3000`. No server, database, email capture, form provider, or Harvex external API is needed. Keep internal site navigation relative and do not publish unless explicitly requested.
+Continue serving `public/` on the existing static Python server at `0.0.0.0:3000`. The selected mailto form needs no server, database, email capture, or form provider. It opens a prefilled email draft to the verified address `Shibanhafiz07@gmail.com`; the visitor's own mail app sends it. The site does not retain form submissions. Keep internal site navigation relative and do not publish unless explicitly requested.
 
 ## Current deployment request
 
-The user asked for deployment to a custom domain or hosting platform but supplied no custom domain. Use the project's existing Manus-managed static hosting. Its output is the committed `public/` directory, published with the no-build contract `command: true`, `outputDirectory: public`; `public/index.html` is present. Preserve `publishing.auto_publish: false` and make only the explicit one-time publication authorized in this request. Do not change DNS or add an external hosting account.
+A prior deployment request exists, but the one-time publication card was declined. Preserve `publishing.auto_publish: false` and do not publish this work unless the user explicitly authorizes it again. No custom domain was supplied; do not change DNS or add an external hosting account.
 
 ## Final visual polish decisions
 
