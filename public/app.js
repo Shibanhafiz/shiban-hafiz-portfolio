@@ -176,6 +176,10 @@
   const emailLink = document.querySelector('#email-link');
   if (data.links.email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.links.email)) {
     emailLink.href = `mailto:${data.links.email}`;
+    const emailArrow = emailLink.querySelector('span');
+    emailLink.replaceChildren(document.createTextNode(data.links.email));
+    if (emailArrow) emailLink.append(emailArrow);
+    emailLink.setAttribute('aria-label', `Email ${data.profile.name} at ${data.links.email}`);
     emailLink.hidden = false;
   }
 

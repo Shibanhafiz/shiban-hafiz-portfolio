@@ -18,8 +18,8 @@ window.PORTFOLIO = {
   links: {
     github: 'https://github.com/Shibanhafiz',
     linkedin: 'https://www.linkedin.com/in/shiban-hafiz-57a4623a9/',
-    // Add Shiban's real email here; the email action remains hidden while this is empty.
-    email: ''
+    // Verified from the supplied résumé; the address is exposed as a mailto link.
+    email: 'Shibanhafiz07@gmail.com'
   },
   heroTechnologies: [
     { name: 'Python', icon: 'Py', tone: 'python' },
