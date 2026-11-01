@@ -2,7 +2,13 @@
   'use strict';
 
   const data = window.PORTFOLIO;
-  if (!data) return;
+  if (!data) {
+    const notice = document.getElementById('portfolio-load-status');
+    if (notice) notice.hidden = false;
+    return;
+  }
+
+  document.body.classList.remove('no-js');
 
   const make = (tag, className, text) => {
     const node = document.createElement(tag);
@@ -27,6 +33,15 @@
     link.target = '_blank';
     link.rel = 'noopener noreferrer';
     return true;
+  };
+
+  const createExternalLink = (label, value, ariaLabel, className = 'project-link') => {
+    const link = make('a', className);
+    const arrow = make('span', 'project-link-arrow', '↗');
+    arrow.setAttribute('aria-hidden', 'true');
+    link.append(document.createTextNode(`${label} `), arrow);
+    link.setAttribute('aria-label', ariaLabel);
+    return setExternalLink(link, value) ? link : null;
   };
 
   const heroTitle = document.querySelector('#hero-title');
@@ -68,77 +83,92 @@
 
   const projectGrid = document.querySelector('#project-grid');
   data.projects.forEach((project) => {
-    const card = make('article', `project-card${project.id === 'cybershield' ? ' project-card-featured' : ''}`);
-    const art = make('div', `project-art project-visual-${project.id}`);
-    art.setAttribute('aria-hidden', 'true');
-    const artTitle = make('p', 'project-visual-title');
-    const visualLine = project.id === 'harvex'
-      ? ['FIELD', 'WATER', 'INSIGHT']
-      : project.id === 'cybershield'
-        ? ['PASTE', 'ANALYZE', 'UNDERSTAND', 'ACT SAFELY']
-        : ['URL', 'CHECKS', 'FINDINGS'];
-    visualLine.forEach((word, index) => {
-      const step = make('span', '', word);
-      artTitle.append(step);
-      if (index === visualLine.length - 1) return;
-      const arrow = make('span', '', ' → ');
-      arrow.setAttribute('aria-hidden', 'true');
-      artTitle.append(arrow);
-    });
-    const artTrack = make('div', 'project-visual-track');
-    artTrack.append(make('span', '', project.subtitle.toUpperCase()));
-    if (project.id === 'cybershield') artTrack.append(make('span', '', 'INDICATIVE SIGNALS · NEVER PROOF'));
-    else if (project.id === 'agentbreak') artTrack.append(make('span', '', 'PROTOTYPE · FINDINGS NEED REVIEW'));
-    else artTrack.append(make('span', '', 'DECISION SUPPORT'));
-    art.append(artTitle, artTrack, make('span', 'art-caption', project.category));
+    const card = make('article', 'project-card');
+    card.setAttribute('aria-labelledby', `${project.id}-title`);
+
+    const heading = make('header', 'project-heading');
+    heading.append(make('p', 'project-category', project.category));
+    const title = make('h3', '', project.name);
+    title.id = `${project.id}-title`;
+    heading.append(title, make('p', 'project-subtitle', project.subtitle));
 
     const info = make('div', 'project-info');
-    const copy = make('div', 'project-info-copy');
-    const title = make('h3', '', project.name);
-    const subtitle = make('p', 'project-subtitle', project.subtitle);
-    const description = make('p', 'project-description', project.description);
-    const positioning = make('p', 'project-positioning', project.positioning);
-    copy.append(title, subtitle, description, positioning);
+    info.append(make('p', 'project-description', project.description));
 
-    const technologyList = make('ul', 'project-tags');
-    technologyList.setAttribute('aria-label', `${project.name} technologies`);
-    project.technologies.forEach((technology) => technologyList.append(make('li', '', technology)));
-    copy.append(technologyList);
+    const technologyBlock = make('div', 'project-tech-block');
+    technologyBlock.append(make('p', 'project-field-label', project.technologies.length
+      ? 'Technologies in source'
+      : 'Technology status'));
+    if (project.technologies.length) {
+      const technologyList = make('ul', 'project-tags');
+      technologyList.setAttribute('aria-label', `${project.name} technologies in source`);
+      project.technologies.forEach((technology) => technologyList.append(make('li', '', technology)));
+      technologyBlock.append(technologyList);
+    } else if (project.technologyNote) {
+      technologyBlock.append(make('p', 'project-tech-note', project.technologyNote));
+    }
+    info.append(technologyBlock);
 
-    const featureList = make('ul', 'project-features');
-    featureList.setAttribute('aria-label', `${project.name} key features`);
-    project.features.forEach((feature) => featureList.append(make('li', '', feature)));
-    copy.append(featureList);
+    if (project.note) info.append(make('p', 'project-note', project.note));
 
-    if (project.note) copy.append(make('p', 'project-note', project.note));
+    if (project.details?.length) {
+      const details = make('details', 'project-details');
+      details.append(make('summary', 'project-details-summary', 'Source & implementation notes'));
+      const detailList = make('dl', 'project-detail-list');
+      project.details.forEach(({ label, text }) => {
+        if (!label || !text) return;
+        const item = make('div', 'project-detail-item');
+        item.append(make('dt', '', label), make('dd', '', text));
+        detailList.append(item);
+      });
+      details.append(detailList);
+      info.append(details);
+    }
 
     const actions = make('div', 'project-links');
     if (project.repository) {
-      const repository = make('a', 'project-link');
-      repository.append(document.createTextNode(`${project.repositoryLabel || 'GitHub repository'} `));
-      const arrow = make('span', '', '↗');
-      arrow.setAttribute('aria-hidden', 'true');
-      repository.append(arrow);
-      repository.setAttribute('aria-label', `Open the ${project.name} GitHub repository`);
-      if (setExternalLink(repository, project.repository)) actions.append(repository);
+      const repository = createExternalLink(
+        project.repositoryLabel || 'GitHub repository',
+        project.repository,
+        `Open the ${project.name} GitHub repository`
+      );
+      if (repository) actions.append(repository);
+    }
+    if (project.contributionUrl) {
+      const contribution = createExternalLink(
+        project.contributionLabel || 'Contribution',
+        project.contributionUrl,
+        `Open ${project.contributionLabel || `${project.name} contribution source`}`
+      );
+      if (contribution) actions.append(contribution);
     }
     if (project.demo) {
-      const demoUrl = safeHttps(project.demo);
-      if (demoUrl) {
-        const demo = make('a', 'project-link');
-        demo.append(document.createTextNode(`${project.demoLabel || 'Project preview'} `));
-        const arrow = make('span', '', '↗');
-        arrow.setAttribute('aria-hidden', 'true');
-        demo.append(arrow);
-        demo.setAttribute('aria-label', `Open the ${project.name} live demo`);
-        if (setExternalLink(demo, demoUrl)) actions.append(demo);
-      }
+      const demo = createExternalLink(
+        project.demoLabel || 'Live demo',
+        project.demo,
+        `Open the ${project.name} live demo`
+      );
+      if (demo) actions.append(demo);
     }
-    info.append(copy);
     if (actions.childElementCount) info.append(actions);
-    card.append(art, info);
+
+    card.append(heading, info);
     projectGrid.append(card);
   });
+
+  const openSource = data.openSource;
+  if (openSource) {
+    const intro = document.querySelector('#open-description');
+    if (intro) intro.textContent = openSource.description;
+    const list = document.querySelector('#open-source-list');
+    openSource.entries.forEach((entry) => {
+      const item = make('div', 'contribution-item');
+      item.append(make('h3', '', entry.title), make('p', '', entry.description));
+      const link = createExternalLink(entry.linkLabel, entry.url, `Open ${entry.title}`, 'contribution-cta');
+      if (link) item.append(link);
+      list.append(item);
+    });
+  }
 
   const skillGroups = document.querySelector('#skill-groups');
   data.skills.forEach((group) => {
@@ -149,6 +179,28 @@
     row.append(title, items);
     skillGroups.append(row);
   });
+
+  const projectSkillContainer = document.querySelector('#project-skill-evidence');
+  if (projectSkillContainer && data.projectSkillEvidence) {
+    const evidence = data.projectSkillEvidence;
+    const panel = make('aside', 'project-skill-evidence');
+    panel.setAttribute('aria-labelledby', 'project-skill-evidence-title');
+    const heading = make('h3', '', evidence.title);
+    heading.id = 'project-skill-evidence-title';
+    panel.append(heading, make('p', '', evidence.note));
+    const list = make('ul', 'skill-evidence-list');
+    list.setAttribute('aria-label', 'Technologies present in the linked public project contribution');
+    evidence.items.forEach((item) => list.append(make('li', '', item)));
+    panel.append(list);
+    const sourceLink = createExternalLink(
+      evidence.linkLabel,
+      evidence.url,
+      'Open the merged upstream Harvex pull request supporting this project-code evidence',
+      'text-link'
+    );
+    if (sourceLink) panel.append(sourceLink);
+    projectSkillContainer.append(panel);
+  }
 
   const journey = document.querySelector('#journey-list');
   data.journey.forEach((item) => {
@@ -168,9 +220,15 @@
   document.querySelectorAll('[data-social]').forEach((link) => {
     setExternalLink(link, data.links[link.dataset.social]);
   });
-  document.querySelectorAll('[data-project-repository]').forEach((link) => {
-    const project = data.projects.find(({ id }) => id === link.dataset.projectRepository);
-    if (!project?.repository || !setExternalLink(link, project.repository)) link.remove();
+
+  document.querySelectorAll('[data-resume]').forEach((link) => {
+    const file = data.resume?.[link.dataset.resume];
+    if (typeof file === 'string' && file.startsWith('/') && !file.startsWith('//') && !file.includes('..')) {
+      link.href = file;
+      link.hidden = false;
+    } else {
+      link.remove();
+    }
   });
 
   const emailLink = document.querySelector('#email-link');

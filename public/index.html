@@ -4,23 +4,25 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f4f1e9">
-  <meta name="description" content="Portfolio of Shiban Hafiz, a second-year Artificial Intelligence and Machine Learning engineering student building practical software, full-stack applications and applied AI projects.">
+  <meta name="description" content="Shiban Hafiz is a second-year Artificial Intelligence and Machine Learning engineering student at AITM, Bhatkal. Explore source-backed project notes, a merged contribution and current learning areas.">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Shiban Hafiz | AIML Student &amp; Developer">
-  <meta property="og:description" content="A second-year Artificial Intelligence and Machine Learning engineering student building practical software, full-stack applications and applied AI projects.">
-  <title>Shiban Hafiz | AIML Student &amp; Developer</title>
+  <meta property="og:site_name" content="Shiban Hafiz">
+  <meta property="og:title" content="Shiban Hafiz | AIML Student &amp; Software Developer">
+  <meta property="og:description" content="A second-year AIML student at AITM, Bhatkal, sharing project notes, a merged open-source contribution and current learning areas.">
+  <meta name="twitter:card" content="summary">
+  <title>Shiban Hafiz | AIML Student &amp; Software Developer</title>
   <link rel="icon" type="image/svg+xml" href="/assets/brandmark.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&amp;family=DM+Sans:wght@400;500;600;700&amp;family=Newsreader:opsz,wght@6..72,400;6..72,450;6..72,500&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/styles.css?v=20261012-mailto-v2">
+  <link rel="stylesheet" href="/styles.css?v=20261101-final-v5">
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" integrity="sha384-HOvlOYPIs/zjoIkWUGXkVmXsjr8GuZLV+Q+rcPwmJOVZVpvTSXQChiN4t9Euv9Vc" crossorigin="anonymous" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" integrity="sha384-P8VzCVnT9NBUkMrpcIZrJbA7EBjJvh/fJS6PmP+4nLIM284DtsImIv8D0fFjIkeh" crossorigin="anonymous" defer></script>
-  <script src="/portfolio-data.js?v=20261012-mailto-v2" defer></script>
-  <script src="/app.js?v=20261012-mailto-v2" defer></script>
-  <script src="/motion.js?v=20261012-mailto-v2" defer></script>
+  <script src="/portfolio-data.js?v=20261101-final-v5" defer></script>
+  <script src="/app.js?v=20261101-final-v5" defer></script>
+  <script src="/motion.js?v=20261101-final-v5" defer></script>
 </head>
-<body>
+<body class="no-js">
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <a class="wordmark" href="#top" aria-label="Shiban Hafiz, back to top">
@@ -41,6 +43,11 @@
     </nav>
   </header>
 
+  <noscript>
+    <p class="page-shell portfolio-fallback">Some portfolio details, including projects and skills, require JavaScript. The résumé download and direct email link remain available below.</p>
+  </noscript>
+  <p id="portfolio-load-status" class="page-shell portfolio-fallback" role="status" hidden>Portfolio details could not load. Refresh this page; the résumé download and direct email link remain available below.</p>
+
   <main id="main" tabindex="-1">
     <section class="hero page-shell" id="top" aria-labelledby="hero-title">
       <div class="hero-copy">
@@ -53,7 +60,7 @@
           <a class="text-link" data-social="linkedin" href="https://www.linkedin.com/in/shiban-hafiz-57a4623a9/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
         </div>
         <div class="stack-block">
-          <p class="micro-label">TOOLS I’M BUILDING WITH</p>
+          <p class="micro-label">TECH IN REVIEWED PROJECT CODE</p>
           <ul class="tech-list" id="hero-stack" aria-label="Technology stack"></ul>
         </div>
       </div>
@@ -97,7 +104,7 @@
       <div class="section-main">
         <div class="section-heading">
           <div><h2 id="work-title">Built to <em>learn.</em></h2></div>
-          <p class="section-intro">A look at the problems, tools and ideas I’m exploring through software.</p>
+          <p class="section-intro">Three text-first project notes; technologies are listed only where source was available.</p>
         </div>
         <div class="project-grid" id="project-grid"></div>
       </div>
@@ -107,16 +114,10 @@
       <div class="section-rail"><span>OPEN SOURCE</span></div>
       <div class="section-main open-layout">
         <div class="open-copy">
-          <h2 id="open-title">CyberShield<br><em>in the open.</em></h2>
-          <p>A VTU 1BCP308 community/team project for scam awareness, privacy-first reporting, learning and explainable analysis. The repository credits the project team; I’m not assigning individual ownership here.</p>
-          <a class="button button-outline" data-project-repository="cybershield" href="https://github.com/Shibanhafiz/CyberShield-Community" target="_blank" rel="noopener noreferrer">View CyberShield repository <span aria-hidden="true">↗</span></a>
+          <h2 id="open-title">Work, in the<br><em>open.</em></h2>
+          <p id="open-description">A specific merged contribution is linked alongside a team project whose repository does not establish individual feature ownership.</p>
         </div>
-        <div class="contribution-list">
-          <div class="contribution-item"><h3>Understand the signals</h3><p>Message checks combine explainable ML and rule indicators; results are indicative, not proof.</p></div>
-          <div class="contribution-item"><h3>Inspect URLs statically</h3><p>Structural checks never visit or fetch the submitted link.</p></div>
-          <div class="contribution-item"><h3>Learn and report carefully</h3><p>Anonymous reports use redaction and deduplication; learning activities track quiz results, not immunity.</p></div>
-          <a class="contribution-cta" data-project-repository="cybershield" href="https://github.com/Shibanhafiz/CyberShield-Community" target="_blank" rel="noopener noreferrer">Explore source and project documentation <span aria-hidden="true">↗</span></a>
-        </div>
+        <div class="contribution-list" id="open-source-list"></div>
       </div>
     </section>
 
@@ -124,10 +125,11 @@
       <div class="section-rail"><span>SKILLS</span></div>
       <div class="section-main">
         <div class="section-heading">
-          <div><h2 id="skills-title">What I’m <em>learning to use.</em></h2></div>
-          <p class="section-intro">A working set of tools and fundamentals I’m continuing to develop—no percentages or mastery claims.</p>
+          <div><h2 id="skills-title">Tools &amp; ideas <em>in practice.</em></h2></div>
+          <p class="section-intro">Résumé-listed skills and fundamentals, grouped without proficiency scores; active learning areas appear below.</p>
         </div>
         <dl class="skills-table" id="skill-groups"></dl>
+        <div id="project-skill-evidence"></div>
       </div>
     </section>
 
@@ -163,7 +165,7 @@
             <div class="contact-links" aria-label="Contact links">
               <a class="button button-dark" data-social="github" href="https://github.com/Shibanhafiz" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
               <a class="button button-outline" data-social="linkedin" href="https://www.linkedin.com/in/shiban-hafiz-57a4623a9/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
-              <a class="button button-outline" id="email-link" hidden>Email <span aria-hidden="true">↗</span></a>
+              <a class="button button-outline" id="email-link" href="mailto:Shibanhafiz07@gmail.com">Email <span aria-hidden="true">↗</span></a>
             </div>
           </div>
           <form class="contact-form" id="contact-form" aria-labelledby="contact-form-title">
@@ -194,7 +196,10 @@
           </form>
           <div class="resume-card">
             <div><h3>Student résumé.</h3><p>Education, skills, projects and current learning.</p></div>
-            <a class="button button-light" href="/Shiban_Hafiz_Resume.docx" download>Download résumé (DOCX) <span aria-hidden="true">↓</span></a>
+            <div class="resume-actions">
+              <a class="button button-dark" data-resume="pdf" href="/Shiban_Hafiz_Resume.pdf" download>Download résumé (PDF) <span aria-hidden="true">↓</span></a>
+              <a class="button button-light" data-resume="docx" href="/Shiban_Hafiz_Resume.docx" download>DOCX alternative <span aria-hidden="true">↓</span></a>
+            </div>
           </div>
         </div>
       </div>
