@@ -3,12 +3,9 @@
 
   const data = window.PORTFOLIO;
   if (!data) {
-    const notice = document.getElementById('portfolio-load-status');
-    if (notice) notice.hidden = false;
+    window.__PORTFOLIO_BOOT_ERROR__ = 'Portfolio data could not load. Refresh to retry; the résumé and direct email link remain available.';
     return;
   }
-
-  document.body.classList.remove('no-js');
 
   const make = (tag, className, text) => {
     const node = document.createElement(tag);
@@ -47,6 +44,7 @@
   const heroTitle = document.querySelector('#hero-title');
   heroTitle.textContent = data.profile.name;
   document.querySelector('#hero-role').textContent = data.profile.headline;
+  document.querySelector('#hero-intro').textContent = data.profile.intro;
   document.querySelector('#about-positioning').textContent = data.profile.positioning;
   const [contactLead, contactEmphasis] = data.contact.headline.match(/^(.* )([^ ]+\.)$/).slice(1);
   document.querySelector('#contact-title').replaceChildren(
@@ -223,8 +221,11 @@
 
   document.querySelectorAll('[data-resume]').forEach((link) => {
     const file = data.resume?.[link.dataset.resume];
-    if (typeof file === 'string' && file.startsWith('/') && !file.startsWith('//') && !file.includes('..')) {
-      link.href = file;
+    const safeRelativeFile = typeof file === 'string'
+      && /^\.\/[A-Za-z0-9][A-Za-z0-9._-]*$/.test(file)
+      && !file.includes('..');
+    if (safeRelativeFile) {
+      link.href = new URL(file, document.baseURI).href;
       link.hidden = false;
     } else {
       link.remove();
@@ -319,4 +320,8 @@
   }
 
   document.querySelector('#current-year').textContent = String(new Date().getFullYear());
+  document.body.classList.remove('no-js');
+  window.__PORTFOLIO_READY__ = true;
+  const loadStatus = document.querySelector('#portfolio-load-status');
+  if (loadStatus) loadStatus.hidden = true;
 })();

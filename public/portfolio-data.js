@@ -1,18 +1,17 @@
 window.PORTFOLIO = {
   profile: {
     name: 'Shiban Hafiz',
-    headline: 'Artificial Intelligence & Machine Learning Student',
+    headline: 'Second-year B.E. AIML student',
     degree: 'B.E. Artificial Intelligence & Machine Learning',
-    positioning: 'Building practical software, applied AI and full-stack projects.',
+    positioning: 'A second-year AIML student learning through practical software projects.',
+    intro: "I'm building full-stack and applied-AI projects while strengthening my software engineering foundations. I'm seeking an internship where I can contribute to a team and keep learning.",
     location: 'Bhatkal, Karnataka, India',
     year: 'Second-year',
     school: 'AITM, Bhatkal',
     graduation: '2029',
     about: [
-      "I'm a second-year Artificial Intelligence and Machine Learning engineering student interested in building practical software, applied AI and full-stack systems.",
-      'I learn primarily by building. My projects have taken me across web development, backend APIs, cybersecurity and AI-assisted applications.',
-      "I'm currently strengthening my foundations in data structures, databases, backend development, machine learning and software engineering while continuing to build and improve practical projects.",
-      "I'm looking for opportunities where I can work with experienced developers, contribute to real products and continue growing as a software engineer."
+      "I'm a second-year B.E. Artificial Intelligence and Machine Learning student at AITM, Bhatkal. I learn by building and refining practical software projects.",
+      "I'm strengthening my foundations in data structures, SQL, backend development and machine learning while exploring software engineering and applied AI."
     ]
   },
   links: {
@@ -32,10 +31,10 @@ window.PORTFOLIO = {
       id: 'harvex',
       name: 'Harvex',
       subtitle: 'AI-Assisted Smart Farming Platform',
-      category: 'SMART FARMING · PUBLIC FORK',
-      description: 'A smart-farming prototype originally credited to Team Goldsmiths / SIH26180, combining field telemetry with moisture- and rain-aware irrigation decisions and crop-support workflows.',
+      category: 'SMART FARMING · PROTOTYPE',
+      description: 'A prototype credited to Team Goldsmiths / SIH26180, with source-reviewed sensor, irrigation and crop-support workflows.',
       technologies: ['React', 'Vite', 'Express.js', 'FastAPI', 'Python', 'SQLite'],
-      note: 'Shiban authored merged upstream PR #1; the linked repository is a public fork, not a claim of sole authorship. Its README requires written permission for reuse; no public live demo is verified.',
+      note: 'Status: Shiban’s upstream PR #1 is merged; the team project remains a prototype. No public demo or hardware run is verified. The README requires written permission for reuse.',
       details: [
         { label: 'Source reviewed', text: 'The repository contains sensor-ingestion and status endpoints, irrigation decision logic, leaf-analysis paths, and weather, crop-recommendation, chat and voice routes. This is code review, not an operational or hardware test.' },
         { label: 'Architecture', text: 'React/Vite dashboard, Express helper service, Python FastAPI backend and SQLite, with external weather and AI/voice integrations. The README names ESP32 while the inspected firmware path targets ESP8266; deployed hardware is not verified.' },
@@ -52,10 +51,10 @@ window.PORTFOLIO = {
       id: 'cybershield',
       name: 'CyberShield',
       subtitle: 'Community Cybersecurity Project',
-      category: 'COMMUNITY PROJECT · VTU 1BCP308',
+      category: 'TEAM PROJECT · VTU 1BCP308',
       description: 'A community cybersecurity project combining explainable message-risk signals, static URL checks, privacy-oriented reports and scam-awareness learning.',
       technologies: ['React 19', 'Vite', 'FastAPI', 'SQLAlchemy', 'scikit-learn', 'PostgreSQL / SQLite'],
-      note: 'The repository credits a VTU 1BCP308 project team; no individual Shiban feature ownership or public deployment is established.',
+      note: 'Status: source-reviewed community/team project. The repository does not establish Shiban’s individual feature ownership or a public deployment.',
       details: [
         { label: 'Source reviewed', text: 'Message analysis combines TF-IDF/logistic-regression signals with explicit rules and explanations. Structural URL checks do not visit the submitted page or fetch reputation data. The repository also contains redaction and report deduplication, awareness lessons/quizzes, and reviewer/admin moderation routes.' },
         { label: 'Architecture', text: 'React SPA with React Router, Vite and Tailwind; FastAPI and SQLAlchemy backend; PostgreSQL in the documented deployment setup and SQLite for development.' },
@@ -69,11 +68,11 @@ window.PORTFOLIO = {
       id: 'agentbreak',
       name: 'AgentBreak',
       subtitle: 'Web Security Testing Prototype',
-      category: 'OWNER-REPORTED · SOURCE NOT SUPPLIED',
+      category: 'PROTOTYPE · SOURCE NOT SUPPLIED',
       description: 'The supplied résumé describes a URL-submission prototype with automated security-check reporting; its precise checks and report implementation cannot be independently verified without source.',
       technologies: [],
-      technologyNote: 'No code-verified stack is available. The résumé mentions React, TypeScript and APIs, but no repository was supplied to confirm them.',
-      note: 'No public repository, tests or live demo were supplied. Reported findings require validation and are not confirmed vulnerabilities.',
+      technologyNote: 'No source-verified technology stack is available; the project repository was not supplied.',
+      note: 'Status: owner-reported prototype. No public repository, tests or live demo were supplied; reported findings require validation and are not confirmed vulnerabilities.',
       details: [
         { label: 'Reported workflow', text: 'The supplied résumé describes URL submission, automated security-oriented checks and a report of findings. Exact checks, request boundaries and reporting behavior cannot be verified without source code.' },
         { label: 'Evidence available', text: 'The supplied résumé describes this as Shiban’s prototype and mentions a reporting-workflow improvement. No repository, commit history, tests or architecture documentation was supplied for independent review.' },
@@ -132,13 +131,13 @@ window.PORTFOLIO = {
       year: '2026',
       title: 'Building Practical Software',
       place: '',
-      description: 'Developing projects across full-stack development, applied AI, cybersecurity and backend systems.'
+      description: 'Ongoing project work across full-stack development, applied AI, cybersecurity and backend systems.'
     },
     {
       year: '2026',
       title: 'Git & GitHub Development Workflow',
       place: '',
-      description: 'Learning collaborative development, version control, branching, commits, pull requests and project deployment.'
+      description: 'Ongoing learning through version control, branching, commits and pull requests.'
     }
   ],
   interests: [
@@ -146,8 +145,8 @@ window.PORTFOLIO = {
     'AI/ML Engineering', 'Software Engineering', 'Cybersecurity Fundamentals'
   ],
   resume: {
-    pdf: '/Shiban_Hafiz_Resume.pdf',
-    docx: '/Shiban_Hafiz_Resume.docx'
+    pdf: './Shiban_Hafiz_Resume.pdf',
+    docx: './Shiban_Hafiz_Resume.docx'
   },
   contact: {
     headline: "Let's build something useful.",
