@@ -1,60 +1,49 @@
-Shiban Hafiz | Personal Portfolio
+👋 Hi, I'm Shiban Hafiz
 
 AI & Machine Learning Student | Aspiring Software Developer
 
-Welcome to my personal portfolio repository!
+<p align="center">
+  <a href="https://8328-itx5p0x78wrfi5lwt2lvh-6db9b150.sg2.manus.computer/">
+    <img src="https://img.shields.io/badge/🌐_Visit_My_Portfolio-Explore_My_Work-2563EB?style=for-the-badge" alt="Visit My Portfolio"/>
+  </a>
+</p><p align="center">
+  <a href="https://github.com/Shibanhafiz">
+    <img src="https://img.shields.io/badge/GitHub-Profile-181717?style=for-the-badge&logo=github" alt="GitHub"/>
+  </a>
+  <a href="https://www.linkedin.com/in/shiban-hafiz-57a4623a9/">
+    <img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin" alt="LinkedIn"/>
+  </a>
+</p>---
 
-This project showcases my educational background, technical interests, development journey, open-source contributions and selected software projects.
-
-🌐 Portfolio: "Visit My Website" (https://8328-itx5p0x78wrfi5lwt2lvh-6db9b150.sg2.manus.computer/)
-
----
-
-About Me
+🚀 About Me
 
 I'm a second-year Bachelor of Engineering student specializing in Artificial Intelligence and Machine Learning at Anjuman Institute of Technology & Management (AITM), Bhatkal.
 
-I'm passionate about building practical software, exploring artificial intelligence, understanding full-stack development and improving my software engineering fundamentals.
+I'm passionate about building practical software, exploring artificial intelligence, understanding full-stack development, and improving my software engineering fundamentals.
 
-I believe in learning through building, experimenting and solving real-world problems.
+I believe in learning through building, experimenting, and solving real-world problems.
 
-Portfolio Sections
+---
 
-- Home: Introduction and personal branding.
-- About: Educational background and interests.
-- Projects: Selected development projects.
-- Skills: Technical skills and fundamentals.
-- Journey: Current learning and development progress.
-- Open Source: Contributions and collaborative work.
-- Contact: Ways to connect with me.
+💻 Featured Projects
 
-Featured Projects
-
-CyberShield
+🛡️ CyberShield
 
 A cybersecurity-focused project exploring security-related functionality and machine learning.
 
-"View Repository" (https://github.com/Shibanhafiz/CyberShield-Community)
+- "View Source Code" (https://github.com/Shibanhafiz/CyberShield-Community)
 
-Harvex
+🤝 Harvex
 
-A collaborative project showcasing development and teamwork.
+A collaborative project showcasing software development and teamwork.
 
-AgentBreak
+🔐 AgentBreak
 
 A security-testing project exploring automated security assessment workflows.
 
-Project descriptions and implementation status should reflect the current repository state.
+---
 
-Education
-
-B.E. – Artificial Intelligence & Machine Learning
-
-Anjuman Institute of Technology & Management (AITM), Bhatkal
-
-Second Year | 2026
-
-Areas of Interest
+🛠️ Areas of Interest
 
 - Artificial Intelligence & Machine Learning
 - Software Engineering
@@ -63,22 +52,46 @@ Areas of Interest
 - Database Management
 - Data Structures & Algorithms
 
-Connect With Me
+---
 
-- GitHub: "@Shibanhafiz" (https://github.com/Shibanhafiz)
-- LinkedIn: "Shiban Hafiz" (https://www.linkedin.com/in/shiban-hafiz-57a4623a9/)
-- Email: Shibanhafiz07@gmail.com
+🎓 Education
+
+Bachelor of Engineering (B.E.)
+
+Artificial Intelligence & Machine Learning
+
+Anjuman Institute of Technology & Management (AITM), Bhatkal
+
+Second Year | 2026
 
 ---
 
-Repository
+🌱 Currently Focusing On
 
-This repository contains the source code for my personal portfolio website.
-
-Repository: "shiban-hafiz-portfolio" (https://github.com/Shibanhafiz/shiban-hafiz-portfolio)
+- Strengthening programming fundamentals
+- Learning frontend and backend development
+- Understanding database integration and APIs
+- Practicing Data Structures & Algorithms
+- Building practical software projects
 
 ---
 
-Learn. Build. Debug. Improve. Ship.
+🤝 Let's Connect
 
-© 2026 Shiban Hafiz
+<p align="left">
+  <a href="https://github.com/Shibanhafiz">
+    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
+  </a>
+  <a href="https://www.linkedin.com/in/shiban-hafiz-57a4623a9/">
+    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
+  </a>
+  <a href="mailto:Shibanhafiz07@gmail.com">
+    <img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/>
+  </a>
+</p>---
+
+<p align="center">
+  <b>Learn. Build. Debug. Improve. Ship.</b>
+  <br/>
+  <sub>© 2026 Shiban Hafiz</sub>
+</p>
