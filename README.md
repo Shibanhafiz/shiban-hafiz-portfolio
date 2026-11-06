@@ -3,7 +3,7 @@
 AI & Machine Learning Student | Aspiring Software Developer
 
 <p align="center">
-  <a href="https://8328-itx5p0x78wrfi5lwt2lvh-6db9b150.sg2.manus.computer/">
+  <a href="https://shibanhafiz-portfolio.vercel.app/">
     <img src="https://img.shields.io/badge/🌐_Visit_My_Portfolio-Explore_My_Work-2563EB?style=for-the-badge" alt="Visit My Portfolio"/>
   </a>
 </p><p align="center">
