@@ -30,6 +30,7 @@ button { color: inherit; }
 .skip-link { position: fixed; z-index: 100; left: 16px; top: 10px; padding: 10px 16px; background: var(--ink); color: var(--paper); transform: translateY(-150%); }
 .skip-link:focus { transform: translateY(0); }
 #main:focus { outline: none; }
+#main:focus-visible #hero-title { outline: 3px solid var(--accent-dark); outline-offset: 6px; }
 [hidden] { display: none !important; }
 .portfolio-fallback { padding: 12px 0; margin: 0 auto; border-block: 1px solid var(--rule); color: var(--ink-soft); font-size: 13px; line-height: 1.6; }
 .no-js #contact-form { display: none; }
@@ -38,8 +39,8 @@ button { color: inherit; }
 .wordmark { display: inline-flex; min-height: 44px; flex: 0 0 auto; gap: 12px; align-items: center; font-weight: 600; letter-spacing: -.035em; font-size: 15px; }
 .wordmark-mark { width: 34px; height: 34px; }
 .wordmark-period { color: var(--accent-dark); }
-.primary-nav { display: flex; align-items: center; gap: clamp(14px, 2vw, 26px); font-size: 12px; font-weight: 500; }
-.primary-nav a:not(.nav-contact) { display: inline-flex; min-height: 44px; align-items: center; color: var(--ink-soft); transition: color .18s var(--ease); }
+.primary-nav { display: flex; align-items: center; gap: clamp(14px, 2vw, 26px); font-size: 13px; font-weight: 500; }
+.primary-nav a:not(.nav-contact) { display: inline-flex; min-width: 44px; min-height: 44px; align-items: center; justify-content: center; padding-inline: 6px; color: var(--ink-soft); transition: color .18s var(--ease); }
 .primary-nav a:not(.nav-contact):hover { color: var(--accent-dark); }
 .nav-contact { display: inline-flex; min-height: 44px; align-items: center; margin-left: 2px; padding: 8px 14px; border: 1px solid var(--rule); transition: background .18s, border-color .18s, color .18s; }
 .nav-contact span { padding-left: 6px; color: var(--accent-dark); }
@@ -310,6 +311,13 @@ h1 em, h2 em { color: var(--accent); font-weight: 400; }
 .contact-form-help, .contact-form-status { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.55; }
 .contact-form-status:empty { display: none; }
 .contact-main > .resume-card { grid-column: 1 / -1; }
+
+@media (max-width: 900px) {
+  .hero-intro, .section-intro, .about-copy p, .project-description, .open-copy > p, .contribution-item p, .timeline-item > p:last-child, .learning-panel > p, .contact-heading > p { font-size: 16px; }
+  .project-tech-note, .project-note, .project-detail-item dd, .resume-card p { font-size: 15px; }
+  .contact-form-help, .contact-form-status { font-size: 14px; }
+  .contact-field input, .contact-field textarea { font-size: 16px; }
+}
 
 @media (max-width: 1020px) {
   .contact-main { grid-template-columns: minmax(0, 1fr); gap: 30px; }

@@ -66,7 +66,7 @@ window.PORTFOLIO = {
     },
     {
       id: 'agentbreak',
-      name: 'AgentBreak',
+      name: 'Sentrix',
       subtitle: 'Web Security Testing Prototype',
       category: 'PROTOTYPE · SOURCE NOT SUPPLIED',
       description: 'The supplied résumé describes a URL-submission prototype with automated security-check reporting; its precise checks and report implementation cannot be independently verified without source.',
